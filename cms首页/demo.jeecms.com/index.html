@@ -1,0 +1,593 @@
+﻿<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页 - jeecms演示站 - Powered by JEECMS</title>
+<meta http-equiv="keywords" content="JEECMS－JAVA网站内容管理系统|开源java cms系统,jsp cms网站管理"/>
+<meta http-equiv="description" content="JEECMS-国内优秀的JAVA(JSP)网站内容管理系统"/>
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/front.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/jquery.superslide.js"></script>
+<link type="text/css" rel="stylesheet" href="css/home.css" />
+
+<!--[if lt IE 9]> 
+<script src="js/html5shiv.min.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+$(function() {
+	Cms.siteFlow("", location.href, document.referrer, "true");
+	$.cookie("_site_id_cookie","1",{path: '' });
+});
+</script>
+<head>
+<body>
+<section class="top">
+  <div class="red" style="width:100%;"></div>	
+</section>
+<link rel="stylesheet" type="text/css" href="css/login.css" />
+<!-- 百度统计代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?4674b425370d9f190347b297042ae0b1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script>
+function qkeypress(){
+	var q=$("input[name=q]");
+	if(q.val().trim()!=""){
+		$("input[name=q]").autocomplete("enable");
+	}else{
+		$("input[name=q]").autocomplete("disable");
+	}
+}
+function query(){
+	$.post("/createToken.jspx", {}, function(data) {
+		$("#token").val(data.token);
+		$("#searchForm").submit();
+	}, "json");
+}
+$(function() {
+	$("input[name='q']").bind('keypress',function(event){
+	    if(event.keyCode == 13)     
+	    {  
+	    	event.preventDefault();
+	    	query();
+	    }  
+	});
+});
+</script>
+<header class="header rel">
+  <div class="header-jf"><a class="jf-btn" name="gb2big5" id="gb2big5">繁</a></div>
+  <Script Language=Javascript Src="js/gb2big5.js"></Script>
+  <div class="header-rss"><a class="rss-btn" href="/rss.jspx" target="_blank" title="RSS订阅">RSS</a></div>
+  <div class="header-tag"><a class="tag-btn" href="/tag.jspx" target="_blank" title="Tags标签">Tags</a></div>
+  <div class="container clearfix">
+    <a class="logo" href="/"></a>
+<nav class="nav">
+           <ul class="menu">
+        <li><a href="http://demo.jeecms.com/news/index.jhtml">新闻</a></li>
+        <li><a href="http://demo.jeecms.com/download/index.jhtml">下载</a></li>
+        <li><a href="http://demo.jeecms.com/video/index.jhtml">视频</a></li>
+        <li><a href="http://bbs.jeecms.com" target="_blank">论坛</a></li>     
+        <li class="more">      
+      <a href="http://demo.jeecms.com/pic/index.jhtml">图库</a>
+          <ul class="menu-child">
+            <li><a href="http://demo.jeecms.com/job/index.jhtml">招聘</a></li>
+            <li><a href="http://demo.jeecms.com/doc/index.jhtml">文库</a></li>
+            <li><a href="/guestbook.jspx">留言板</a></li>
+            <li><a href="http://demo.jeecms.com/survey.jhtml">网络调查</a></li>
+            <li><a href="http://demo.jeecms.com/znbd.jhtml">智能表单</a></li>
+          </ul>
+        </li> 
+      </ul>
+    </nav>    <div class="header-r">     
+      <div class="search">
+        <form action="/search.jspx" target="_blank" name="searchForm" id="searchForm">
+        <input type="text" name="q" value=""   maxlength="50" autocomplete="off" class="searchCon" style="width:202px;">
+        <input type="hidden" name="token" id="token" value="" />
+        <input type="button" value="" class="searchMenu" onclick="query()" >
+        </form>
+      </div>      
+      <div id="loginCsiDiv" style="float:left;"></div>
+	  <script type="text/javascript">
+		$(function(){
+			Cms.loginSSO('');
+		});
+	   </script>
+<script type="text/javascript" src="js/qc_loader.js" charset="utf-8"></script>
+<script src="js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function() {
+	//优先执行第三方退出 在执行本地退出
+   $('#logout').click(function () {
+              //退出qq
+               if(QC.Login.check()){
+                     QC.Login.signOut();
+                }
+             if(WB2.checkLogin()){
+                WB2.logout(function() {
+		    		//callback function
+	          	});
+             }
+         location="/logout.jspx?returnUrl=/";
+  });
+});
+</script>
+
+      <div class="login"><a class="tc" href="/login.jspx">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/register.jspx">注册</a></div>
+    </div> 
+  </div>
+</header><div class="main container home-main clearfix">
+  <section class="top-ad">
+    <a class="top-ad-pic"><img src="picture/top-ad.jpg"><i>广告</i></a>
+  </section>
+  <section class="home-top clearfix">
+    <div class="left-two fl">
+      <div class="rmht">
+        <div class="left-nav"><span>热门话题</span></div>
+        <div class="rmht-list">
+          <div class="item first">
+            <a href="http://demo.jeecms.com/news/112.jhtml" target="_blank" class="title">电信诈骗多发产生“蝴蝶效应”虚拟运营...</a>
+            <div class="first-des clearfix"><a href="http://demo.jeecms.com/news/112.jhtml" target="_blank"><img src="picture/10114704dsba.jpg"></a><span>自2013年12月首批企业获牌以来，虚拟运营商发展迅速，目前已有42家企业...</span></div>
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/39.jhtml" target="_blank" class="title">四川理塘县发生4.9级地震 震源深度19千米</a>
+            
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/33.jhtml" target="_blank" class="title">亚马逊股价首破800美元大关 市值稳居全...</a>
+            
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/14.jhtml" target="_blank" class="title">习近平宁夏考察第一天：长征永远在路上</a>
+            
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/32.jhtml" target="_blank" class="title">台北故宫将拆除成龙所捐12兽首复制品 ...</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="jcpl">
+        <div class="left-nav"><span>精彩评论</span></div>
+        <div class="jcpl-list">
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/132.jhtml" target="_blank">燃烧吧小宇宙，中国大妈征服世界，哈哈哈哈...</a>
+            <span>原新闻：黄金接连下跌难道又等大妈来托盘</span>
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/130.jhtml" target="_blank">保持定力：坚持走中国特色解决民族问题的正确道路</a>
+            <span>原新闻：党中央推进民族工作创新发展纪实</span>
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/39.jhtml" target="_blank">四川人民伤不起，忘国家加紧开展救援以及灾后重建工作。</a>
+            <span>原新闻：四川理塘县发生4.9级地震 震源深度19千米</span>
+          </div>
+          <div class="item">
+            <a href="http://demo.jeecms.com/news/30.jhtml" target="_blank">早就该这样了，不知道多少不法分子利用不实名手机号进行诈骗。</a>
+            <span>原新闻：不实名手机号停机在即 移动：不对任何社会渠道授权网络售卡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rdjj fl">
+      <div class="nav-link"><a href="/news/index.jhtml">热点聚焦</a></div>
+      <div class="rdjj-top-news"><a href="http://demo.jeecms.com/news/113.jhtml" target="_blank">李克强联合国承诺援助难民：这是责任和道义的担当</a></div>
+      <div class="rdjj-list">
+        <ul>
+          <li><a href="http://demo.jeecms.com/news/132.jhtml" target="_blank" class="bold">黄金接连下跌难道又等大妈来托盘</a></li>
+          <li><a href="http://demo.jeecms.com/news/131.jhtml" target="_blank" >楼市调控应跳出周期性怪圈</a></li>
+          <li><a href="http://demo.jeecms.com/news/130.jhtml" target="_blank" >党中央推进民族工作创新发展纪实</a></li>
+          <li><a href="http://demo.jeecms.com/news/112.jhtml" target="_blank" >电信诈骗多发产生“蝴蝶效应”虚拟运营商融资受波及</a></li>
+          <li><a href="http://demo.jeecms.com/news/39.jhtml" target="_blank" >四川理塘县发生4.9级地震 震源深度19千米</a></li>
+          <li><a href="http://demo.jeecms.com/news/37.jhtml" target="_blank" >苹果研发神秘新设备：体积类似Apple TV 支持NFC蓝牙</a></li>
+          <li><a href="http://demo.jeecms.com/news/33.jhtml" target="_blank" class="bold">亚马逊股价首破800美元大关 市值稳居全球上市公司第四</a></li>
+          <li><a href="http://demo.jeecms.com/news/32.jhtml" target="_blank" >台北故宫将拆除成龙所捐12兽首复制品 成龙回应</a></li>
+          <li><a href="http://demo.jeecms.com/news/27.jhtml" target="_blank" >“一带一路”：习近平打开的“筑梦空间”</a></li>
+          <li><a href="http://demo.jeecms.com/news/14.jhtml" target="_blank" >习近平宁夏考察第一天：长征永远在路上</a></li>
+          <li><a href="http://demo.jeecms.com/news/362.jhtml" target="_blank" >美食天地</a></li>
+          <li><a href="http://demo.jeecms.com/news/210.jhtml" target="_blank" >JEEBBS5.1即将发布</a></li>
+          <li><a href="http://demo.jeecms.com/news/206.jhtml" target="_blank" class="bold">清华经管学院顾问委员会新增3委员 孙正义入选|孙正义|软...</a></li>
+          <li><a href="http://demo.jeecms.com/news/204.jhtml" target="_blank" >中国至斯洛伐克集装箱班列在大连港开通|斯洛伐克|大连港|...</a></li>
+          <li><a href="http://demo.jeecms.com/news/205.jhtml" target="_blank" >报告:2020年中国美容产业年产值预计将超一万亿|美容|年产...</a></li>
+          <li><a href="http://demo.jeecms.com/news/203.jhtml" target="_blank" >北京28日将刮大风气温下降 29日天气晴朗|大风|冷空气|气...</a></li>
+          <li><a href="http://demo.jeecms.com/news/202.jhtml" target="_blank" >环保部:到2020年长江流域水质将由轻污染至良好|环保部|水...</a></li>
+          <li><a href="http://demo.jeecms.com/news/201.jhtml" target="_blank" >北京3年多共追回外逃人员66名 追赃款1130万元|出国|外逃|...</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-fr fr">
+      <div class="home-banner" id="section-focus-pic">
+        <div class="bd" data-scro="list">          
+          <ul>
+            <li class="item" style="left:0;"><a href="http://demo.jeecms.com/pic/13.jhtml" target="_blank"><img src="picture/19141129f6g4.jpg"><div class="banner-title"><i class="Cpic"></i><span>中国空军航空兵赴南海常态化战斗巡航</span></div></a></li>
+            <li class="item" ><a href="http://demo.jeecms.com/pic/116.jhtml" target="_blank"><img src="picture/10131742wzhv.jpg"><div class="banner-title"><i class="Cpic"></i><span>全世界最孤独的咖啡馆：海拔4860米 达古冰川之巅</span></div></a></li>
+            <li class="item" ><a href="http://demo.jeecms.com/pic/115.jhtml" target="_blank"><img src="picture/101314450fs1.jpg"><div class="banner-title"><i class="Cpic"></i><span>四川石渠发现至少30万公顷珍贵泥炭湿地资源</span></div></a></li>
+            <li class="item" ><a href="http://demo.jeecms.com/pic/114.jhtml" target="_blank"><img src="picture/101308178wzr.jpg"><div class="banner-title"><i class="Cpic"></i><span>科学家研制“隐身潜水服” 跟鲨鱼同游也不怕被</span></div></a></li>
+            <li class="item" ><a href="http://demo.jeecms.com/pic/7.jhtml" target="_blank"><img src="picture/151530033koq.jpg"><div class="banner-title"><i class="Cpic"></i><span>震撼的视角！2016年度无人机摄影大赛佳作大赏</span></div></a></li>
+          </ul>
+        </div>
+        <div class="hd" data-scro="controler">
+               <b class="down">1</b>
+               <b >2</b>
+               <b >3</b>
+               <b >4</b>
+               <b >5</b>
+               <span>/5</span>
+        </div>
+        <div class="controler2" data-scro="controler2">
+		  <a href="javascript:;" class="prev"><i></i></a>
+		  <a href="javascript:;" class="next"><i></i></a>
+	    </div>
+        <script type="text/javascript" src="js/script.js"></script>
+      </div>
+      <div class="home-video">
+        <div class="nav-link"><a href="/video/index.jhtml">视频新闻</a></div>
+        <div class="item clearfix" style="margin-top:14px;">
+          <div class="video-pic fl"><a href="http://demo.jeecms.com/video/121.jhtml" target="_blank"><img src="picture/10133710to3f.jpg"><span>《半妖倾城》爱与恨，追</span></a></div>
+          <div class="video-txt">
+            <ul>
+              <li><a href="http://demo.jeecms.com/video/129.jhtml" target="_blank">北京特战队员魔鬼周训练 挑战50项最严苛</a></li>
+              <li><a href="http://demo.jeecms.com/video/128.jhtml" target="_blank">德国举行南瓜称重比赛 763公斤南瓜获得加</a></li>
+              <li><a href="http://demo.jeecms.com/video/127.jhtml" target="_blank">美国金秋不止红叶</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="video-pic fl"><a href="http://demo.jeecms.com/video/123.jhtml" target="_blank"><img src="picture/10134048htcl.jpg"><span>《奔跑吧兄弟》收官对决</span></a></div>
+          <div class="video-txt">
+            <ul>
+              <li><a href="http://demo.jeecms.com/video/126.jhtml" target="_blank">西北第一村白哈巴的早秋</a></li>
+              <li><a href="http://demo.jeecms.com/video/125.jhtml" target="_blank">习主席和中央军委领导推进军队战斗力建设</a></li>
+              <li><a href="http://demo.jeecms.com/video/124.jhtml" target="_blank">李克强出席加拿大总理家宴 小小特鲁多表</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="video-list">
+            <ul>
+              <li><a href="http://demo.jeecms.com/video/63.jhtml" target="_blank">宇航员拍摄地球夜景：灯火辉煌灿烂 海水平滑如镜</a></li>
+              <li><a href="http://demo.jeecms.com/video/61.jhtml" target="_blank">莫斯科举办国际灯光节</a></li>
+              <li><a href="http://demo.jeecms.com/video/59.jhtml" target="_blank">旅比大熊猫宝宝取名“天宝”</a></li>
+              <li><a href="http://demo.jeecms.com/video/57.jhtml" target="_blank">本网记者体验360行之【183】另类“复制”</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home-ad02"><a><img src="picture/ds_banner.png"></a></section>
+  <section class="home-ch clearfix">
+    <div class="home-ch-left fl">
+      <div class="jczt">
+        <div class="jczt-nav">精彩专题</div>
+        <div class="jczt-list">
+          <div class="home-jczt">
+          <a href="/topic/1.jspx" target="_blank"><img src="picture/10100951y2xy.jpg"></a>
+          <a href="/topic/3.jspx" target="_blank"><img src="picture/101010021q7v.jpg"></a>
+          <a href="/topic/2.jspx" target="_blank"><img src="picture/10100842hqdk.jpg"></a>
+          </div>
+        </div>
+      </div>
+      <div class="zxly">
+        <div class="left-nav"><span>最新留言</span></div>
+        <div class="jcpl-list" style="padding-top:10px;">
+          <div class="item" style="border-top:none;">
+            <a>请问在内容中上传视频的限制是多大，能不能自己设置设置视频的大小	</a>
+          </div>
+          <div class="item" >
+            <a>网店和论坛的用户管理和jeecms&nbsp;可以统一起来吗？	</a>
+          </div>
+          <div class="item" >
+            <a>怎么在页面首页放一个视频之后我点击的时候就可以看？</a>
+          </div>
+          <div class="item" >
+            <a>新版jeecms&nbsp;v8的改动很大，希望做得更好，持续关注中。</a>
+          </div>
+        </div>
+        <div class="message"><a href="/guestbook.jspx"><img src="picture/message.png"></a></div>
+      </div>
+    </div>
+    <div class="home-ch-m fl">
+    <div class="rdjj">
+      <div class="nav-link"><a href="/job/index.jhtml">招聘板块</a></div>
+      <div class="rdjj-list job-list">
+        <ul>
+          <li><a class="bold" href="http://demo.jeecms.com/job/140.jhtml" target="_blank">安卓游戏开发5险1金/<span>重庆</span>/JEECMS开发站2016-10-10</a></li>
+          <li><a  href="http://demo.jeecms.com/job/51.jhtml" target="_blank">诚聘微信推广专员/<span>西安</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/50.jhtml" target="_blank">聘网页前端设计3K双休/<span>南京</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/49.jhtml" target="_blank">IT公司招软件工程师助理/<span>重庆</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/48.jhtml" target="_blank">急聘Android开发/<span>杭州</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/47.jhtml" target="_blank">3k计算机实习生双休/<span>重庆</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a class="bold" href="http://demo.jeecms.com/job/46.jhtml" target="_blank">项目经理/<span>广州</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/45.jhtml" target="_blank">文案编辑/<span>北京</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/44.jhtml" target="_blank">asp.net开发工程师/<span>上海</span>/JEECMS开发站2016-09-26</a></li>
+          <li><a  href="http://demo.jeecms.com/job/43.jhtml" target="_blank">web前端开发人员/<span>南昌</span>/JEECMS开发站2016-09-26</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="rdjj" style="margin-top:16px;">
+      <div class="nav-link"><a href="/doc/index.jhtml">文库板块</a></div>
+      <div class="rdjj-list job-list doc-list">
+        <ul>
+          <li 
+	          
+    
+    class="pdf"
+	           ><a class="bold" href="http://demo.jeecms.com/doc/136.jhtml" target="_blank">《习近平的国家治理现代化思想》出版|2016-10-10</a></li>
+          <li 
+	          class="doc"
+    
+    
+	           ><a  href="http://demo.jeecms.com/doc/352.jhtml" target="_blank">文库转换测试|2018-08-30</a></li>
+          <li 
+	          class="doc"
+    
+    
+	           ><a  href="http://demo.jeecms.com/doc/351.jhtml" target="_blank">测试文库20180830|2018-08-30</a></li>
+          <li ><a  href="http://demo.jeecms.com/doc/224.jhtml" target="_blank">文库测试|2018-01-09</a></li>
+          <li 
+	          
+    
+    class="pdf"
+	           ><a  href="http://demo.jeecms.com/doc/139.jhtml" target="_blank">QRcode国际标准|2016-10-10</a></li>
+          <li 
+	          class="doc"
+    
+    
+	           ><a  href="http://demo.jeecms.com/doc/138.jhtml" target="_blank">2015各地区毕业生薪酬报告|2016-10-10</a></li>
+          <li 
+	          
+    class="ppt"
+    
+	           ><a class="bold" href="http://demo.jeecms.com/doc/137.jhtml" target="_blank">宇宙系统的神秘设计|2016-10-10</a></li>
+          <li 
+	          class="doc"
+    
+    
+	           ><a  href="http://demo.jeecms.com/doc/135.jhtml" target="_blank">中国法院信息化第三方评估报告|2016-10-10</a></li>
+          <li 
+	          
+    
+    class="pdf"
+	           ><a  href="http://demo.jeecms.com/doc/134.jhtml" target="_blank">2015年1季度国民经济开局平稳|2016-10-10</a></li>
+          <li 
+	          class="doc"
+    
+    
+	           ><a  href="http://demo.jeecms.com/doc/133.jhtml" target="_blank">2016高考状元笔记|2016-10-10</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="home-ch-m fr clearfix">
+    <div class="rdjj" style="margin:0; overflow:hidden;">
+      <div class="nav-link"><a href="/download/index.jhtml">下载板块</a></div>
+      <div class="dl-list clearfix">
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/xtrj/103.jhtml" target="_blank"><img src="picture/101120330mpz.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/xtrj/103.jhtml" target="_blank" class="dl-txt">搜狗输入法</a>
+            <a href="http://demo.jeecms.com/xtrj/103.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/110.jhtml" target="_blank"><img src="picture/101135560ne4.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/110.jhtml" target="_blank" class="dl-txt">腾讯视频</a>
+            <a href="http://demo.jeecms.com/mtzs/110.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/109.jhtml" target="_blank"><img src="picture/1011351336l0.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/109.jhtml" target="_blank" class="dl-txt">PPTV聚力</a>
+            <a href="http://demo.jeecms.com/mtzs/109.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/108.jhtml" target="_blank"><img src="picture/10113400utfn.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/108.jhtml" target="_blank" class="dl-txt">360浏览器</a>
+            <a href="http://demo.jeecms.com/mtzs/108.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/107.jhtml" target="_blank"><img src="picture/10113226knhj.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/107.jhtml" target="_blank" class="dl-txt">谷歌浏览器</a>
+            <a href="http://demo.jeecms.com/mtzs/107.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/106.jhtml" target="_blank"><img src="picture/101130399dbt.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/106.jhtml" target="_blank" class="dl-txt">爱奇艺视频</a>
+            <a href="http://demo.jeecms.com/mtzs/106.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/105.jhtml" target="_blank"><img src="picture/10112845wryq.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/105.jhtml" target="_blank" class="dl-txt">阿里旺旺</a>
+            <a href="http://demo.jeecms.com/mtzs/105.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/yxyl/104.jhtml" target="_blank"><img src="picture/10112706jiii.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/yxyl/104.jhtml" target="_blank" class="dl-txt">YY语音</a>
+            <a href="http://demo.jeecms.com/yxyl/104.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/xtrj/102.jhtml" target="_blank"><img src="picture/101119092w8r.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/xtrj/102.jhtml" target="_blank" class="dl-txt">360安全卫士</a>
+            <a href="http://demo.jeecms.com/xtrj/102.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/mtzs/101.jhtml" target="_blank"><img src="picture/10111618rhdk.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/mtzs/101.jhtml" target="_blank" class="dl-txt">迅雷9</a>
+            <a href="http://demo.jeecms.com/mtzs/101.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/yxyl/100.jhtml" target="_blank"><img src="picture/10110634gxcz.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/yxyl/100.jhtml" target="_blank" class="dl-txt">诺亚传说</a>
+            <a href="http://demo.jeecms.com/yxyl/100.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+        <div class="item clearfix">
+          <div class="dl-pic"><a href="http://demo.jeecms.com/xtrj/72.jhtml" target="_blank"><img src="picture/27101524dxj7.jpg"></a></div>
+          <div>
+            <a href="http://demo.jeecms.com/xtrj/72.jhtml" target="_blank" class="dl-txt">360杀毒</a>
+            <a href="http://demo.jeecms.com/xtrj/72.jhtml" target="_blank" class="dl-btn"><img src="picture/dl-btn.gif"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rdjj" style="margin-top:16px; margin-left:0">
+      <div class="nav-link"><a href="/survey/index.jhtml">网络调查</a></div>
+      <div class="rdjj-list job-list">
+        <ul>
+          <li><a class="bold" href="/vote.jspx?voteId=13" target="_blank">嗯嗯|已结束</a></li>
+          <li><a  href="/vote.jspx?voteId=11" target="_blank">专家建议取消住房公积金，这事儿你咋看？|2018-10-18</a></li>
+          <li><a  href="/vote.jspx?voteId=10" target="_blank">国庆长假结束,您尽兴了吗?|2017-10-10</a></li>
+          <li><a  href="/vote.jspx?voteId=9" target="_blank">南昌“我的校园我的家 温馨校园”评选活动|2017-12-01</a></li>
+          <li><a  href="/vote.jspx?voteId=8" target="_blank">微信拍照大奖赛优秀作品 投票 开始啦|2016-10-27</a></li>
+          <li><a  href="/vote.jspx?voteId=7" target="_blank">“樱花女神”评选大赛 第一季|2017-10-18</a></li>
+          <li><a class="bold" href="/vote.jspx?voteId=6" target="_blank">2015年度好声音评选|2016-12-31</a></li>
+          <li><a  href="/vote.jspx?voteId=5" target="_blank">最美志愿者评选|2019-01-09</a></li>
+          <li><a  href="/vote.jspx?voteId=4" target="_blank">男神女神主持选拔大赛|2020-10-09</a></li>
+          <li><a  href="/vote.jspx?voteId=3" target="_blank">工资收入问卷调查|2016-09-30</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="rdjj tssj">
+    <div class="nav-link"><a>图说世界</a></div>
+    <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+    <link href="css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <div class="tssj-list">
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/13.jhtml" target="_blank"><img src="picture/19141129f6g4.jpg"><span>中国空军航空兵赴南海常态化战</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/120.jhtml" target="_blank"><img src="picture/10133449hwwr.jpg"><span>宛如置身黑客帝国 “啤酒丛林</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/119.jhtml" target="_blank"><img src="picture/101326014zdc.jpg"><span>摄影师拍摄巨鳄破水而出吞食猎</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/118.jhtml" target="_blank"><img src="picture/10132253w0rj.jpg"><span>探访燕城监狱：蔬菜自己种 午</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/117.jhtml" target="_blank"><img src="picture/101320442qbi.jpg"><span>中俄“合作－2016”联合反恐训</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/116.jhtml" target="_blank"><img src="picture/10131742wzhv.jpg"><span>全世界最孤独的咖啡馆：海拔48</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/115.jhtml" target="_blank"><img src="picture/101314450fs1.jpg"><span>四川石渠发现至少30万公顷珍贵</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/114.jhtml" target="_blank"><img src="picture/101308178wzr.jpg"><span>科学家研制“隐身潜水服” 跟</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/7.jhtml" target="_blank"><img src="picture/151530033koq.jpg"><span>震撼的视角！2016年度无人机摄</span></a>
+      </div>
+      <div class="item">
+        <a href="http://demo.jeecms.com/pic/2.jhtml" target="_blank"><img src="picture/15154249ucra.jpg"><span>法国尼斯发生汽车冲撞事故 已</span></a>
+      </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $('.tssj-list').bxSlider({
+            slideWidth: 224,
+            minSlides: 1,
+            maxSlides: 5,
+            slideMargin: 20
+          });
+        });
+    </script> 
+  </section>
+</div>
+<footer class="footer">
+  <div class="footer-link container">
+    <a style="margin-left:0;" href="http://www.jeecms.com">关于我们</a><a href="http://www.jeecms.com/lxwm.htm">联系我们</a><a href="http://www.jeecms.com/zhaopin.htm">诚聘英才</a><a href="http://www.jeecms.com/">友情链接</a><a href="http://bbs.jeecms.com/fabu/index.jhtml">程序下载</a><a href="http://www.jeecms.com/ad.htm">合作服务</a><a href="http://www.jeecms.com/xkxy.htm">许可协议</a><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a><a onclick="SetHome(window.location)" href="javascript:void(0)">设为首页</a><a href="/jeeadmin/jeecms/index.do" target="_blank">管理登录</a>
+  </div>
+  <div class="copyright container"><p>电话：0791-86538070　13576281815     传真：0791-86538070     ICP备案号：赣ICP备13005266号     Powered by JeeCms Copyright © 2007-2015 www.jeecms.com, All Rights Reserved</p>
+   	<p>
+  	浏览总量<span id="pv"></span> |  访客数总量 <span id="visitor"></span>|  
+  	今日浏览总量<span id="dayPv"></span>  |  今日访客数<span id="dayVisitor"></span>|  
+  	本周浏览总量<span id="weekPv"></span>  |  本周访客数<span id="weekVisitor"></span>| 
+  	本月浏览总量<span id="monthPv"></span>  |  本月访客数<span id="monthVisitor"></span>
+  	</p> 
+  </div>
+</footer>
+<script type="text/javascript" language="javascript">
+   //加入收藏
+       function AddFavorite(sURL, sTitle) {
+           sURL =encodeURI(sURL); 
+       try{   
+          window.external.addFavorite(sURL, sTitle);   
+       }catch(e) {   
+          try{   
+              window.sidebar.addPanel(sTitle, sURL, "");   
+           }catch (e){   
+              alert("您的浏览器不支持自动加入收藏功能，请使用Ctrl+D进行添加，或手动在浏览器里进行设置！");
+          }   
+       }
+   }
+   
+   //设为首页
+   function SetHome(url){
+       if (document.all) {
+          document.body.style.behavior='url(#default#homepage)';
+             document.body.setHomePage(url);
+       }else{
+           alert("您的浏览器不支持自动设置页面为首页功能，请您手动在浏览器里设置该页面为首页！");
+       }
+   }
+</script><div class="right-fixed">
+  <ul>
+    <!--
+    <li class="app">
+      <div class="app-logo"></div>
+    </li>
+    -->
+    <li class="weixin">
+      <div class="weixin-logo"></div>
+    </li>
+    <li class="wap">
+      <div class="wap-logo"><img src="picture/demension.png"></div>
+    </li>
+    <li class="back-top"></li>    
+  </ul>
+  <script type="text/javascript">
+	$(function(){
+		var $body = $(document.body);;
+		var $bottomTools = $('.right-fixed');
+			$(window).scroll(function () {
+				var scrollHeight = $(document).height();
+				var scrollTop = $(window).scrollTop();
+				scrollTop > 50 ? $(".back-top").slideDown(300).css("display","block") : $(".back-top").slideUp(300);			
+			});
+			$('.back-top').click(function (e) {
+				e.preventDefault();
+				$('html,body').animate({ scrollTop:0});
+			});
+			
+	});
+  </script>
+</div></body>
+</html>

@@ -1,0 +1,80 @@
+﻿.wp_celan_content p{margin:0px;padding:0px;line-height:20px;}
+/*.clearheight{width:100%;height:1px;overflow:hidden;}
+.fixer{ position:fixed; left:0px; top:0px;_position:absolute;_top:e-xpression(documentElement.scrollTop+10 + "px"); z-index:9999;}*/
+
+/*common*/
+.wp_celan_content{width:42px;height:100%;position:fixed;right:16px;top:0px;z-index:999999;background:#17a8fb;text-align:center;}
+.wp_celan_content p.p1{width:100%;overflow:hidden;padding-top:15px;}
+.wp_celan_content p.p1 a{background:url("../images/p1.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+.wp_celan_content p.p2{width:100%;overflow:hidden; padding-top:15px;}
+/*.wp_celan_content p.p2 a{background:url("../images/cndns_domainname_chinese_img01.png") 3px -69px no-repeat;display:inline-block;padding-top:15px;color:#efefef;}*/
+.wp_celan_content p.p2 a{background:url("../images/p2.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+.wp_celan_content p.p3{width:100%;overflow:hidden; padding-top:15px;}
+.wp_celan_content p.p3 a{background:url("../images/p3.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+.wp_celan_content p.p4{width:100%;overflow:hidden; padding-top:15px;}
+.wp_celan_content p.p4 a{background:url("../images/p4.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+.wp_celan_content p.p5{width:100%;overflow:hidden; padding-top:15px;}
+.wp_celan_content p.p5 a{background:url("../images/p5.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+.wp_celan_content p.p6{width:100%;overflow:hidden; padding-top:15px;}
+.wp_celan_content p.p6 a{background:url("../images/p6.png") top center no-repeat;display:inline-block;padding-top:15px;color:#efefef;}
+
+.wp_celan_content p.p1 span,.wp_celan_content p.p2 span,.wp_celan_content p.p3 span,.wp_celan_content p.p4 span,.wp_celan_content p.p5 span,.wp_celan_content p.p6 span,.wp_celan_content p.p7 span,.wp_celan_content p.p8 span{ line-height:38px;word-break:keep-all;}
+.wp_celan_content p.pwb{width:100%;position:absolute;bottom:92px;left:0px; z-index:10;}
+.wp_celan_content p.pwb a{width:19px;height:19px;background:url("../images/m_view_weibo.png") 0px 0px no-repeat;display:inline-block;}
+.wp_celan_content p.pqr{width:100%;position:absolute;bottom:50px;left:0px; z-index:10;}
+.wp_celan_content p.pqr a{width:19px;height:19px;background:url("../images/m_view_qr.png") 0px 0px no-repeat;display:inline-block;}
+.wp_celan_content p.pqr b{width:178px;height:197px;display:inline-block;background:url("../images/m_view_arrow.png") 5px 3px no-repeat;position:absolute;left:-164px;top:-147px;display:none;}
+.wp_celan_content p.pqr b>img{padding:18px 10px 6px 0;width:122px;height:122px;}
+.wp_celan_content p.ptop{ position:absolute; bottom:0; right:0px; z-index:99999; display:;;}
+.wp_celan_content p.ptop a{ color:#fff; width:42px; height:50px; display:block; background:url("../images/m_view_top.png") no-repeat;}
+#wp_celan_meau .p8{ bottom:320px; right:0; width:105px; height:110px; position:fixed; z-index:1000000}
+#wp_celan_meau .p8 i{ display:block; position:absolute; top:0; left:0; width:16px; height:16px; cursor:pointer; }
+/**开关按钮*/
+.wp_celan_content_open{width:57px;height:50px;overflow:hidden;position:fixed;right:-57px;bottom:30px;z-index:999999;}
+.wp_celan_content_open a{width:57px;height:50px;display:block; background:url("../images/rightservices.png") no-repeat;}
+.wp_celan_content_open a:hover{background:url("../images/rightservices_h.png") no-repeat;}
+
+.com_gy{ width:291px;height:100%; position:fixed; top:0; right:-291px; z-index:10000;/*border:solid 1px #17a8fb; /*display:none;*/}
+/**/
+#wp_celan_meau .wp_celan_content span.s_arrow{background: url(../images/icon_view_arr.png) 0px 0px no-repeat;width:6px;height:13px; position: absolute;z-index:1013;margin-left:-15px;margin-top:-2px;background-color: #17a8fb;display:none;}
+
+
+/*侧边栏展示-开始*/
+/*侧边栏展开*/
+.wp_celan_detailcontent{ width:178px; position:fixed; background-color:#fff; height:100%; display:display;}
+.wp_celan_detailcontent h1{ width:136px; display:block;margin: 0px;padding: 0px; color:#a2a39e; font-size:18px; font-weight:bold; line-height:26px; padding-bottom:5px;}
+.wp_celan_detailcontent .icotel{ background-image:url(../images/icon_view_tel.png); background-repeat:no-repeat; width:25px; height:25px; display:block; float:left; padding-right:10px;}
+.wp_celan_detailcontent h2{margin: 0px;padding: 0px; color:#a2a39e; font-size:19px; font-weight:bold; line-height:19px; padding-bottom:5px; }
+.wp_celan_detailcontent h3{margin: 0px;padding: 0px; color:#a2a39e; font-size:13px; font-weight:normal; line-height:16px; padding-bottom:10px; border-bottom:#e7e7e7 1px solid; margin-bottom:10px;}
+.wp_celan_detailcontent .detail_info{ width:140px;padding-left:19px;}
+.wp_celan_detailcontent .detail_info ul li{ overflow:hidden;}
+
+/*侧边栏展开内容样式*/
+#wp_celan_meau .detail_kf{ width:134px; float:left; padding-top:10px;}
+#wp_celan_meau .detail_kf li{ padding-bottom:5px;}
+/*#wp_celan_meau .detail_kf_ico_qq{ display:block; width:134px; height:30px; line-height:30px; color:#7d7d7d; text-decoration:none; text-indent:42px; background-image:url(../images/icon_view_qq.png); background-repeat:no-repeat; background-position:10px 5px; border-radius:3px;}*/
+/*#wp_celan_meau .detail_kf_ico_qq:hover{ background-image:url(../images/icon_view_qq_h.png); background-repeat:no-repeat; background-position:10px 5px; color:#fff; background-color:#17a8fb; border-radius:3px;}*/
+#wp_celan_meau .detail_kf li .qq,#wp_celan_meau .detail_kf li .skype,#wp_celan_meau .detail_kf li .ww{ display:block;width:134px;height:30px;line-height:30px;color:#b5b5b5;text-decoration:none;text-indent:42px; }
+#wp_celan_meau .detail_kf_ico_qq{width:21px;height:22px;background-image:url(../images/icon_view_qq.png); background-repeat:no-repeat; background-color:#d1d1cf; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}
+#wp_celan_meau .detail_kf li .qq:hover{ display:block; width:134px; height:30px; line-height:30px; color:#fff; text-decoration:none; text-indent:42px;  background-color:#17a8fb; border-radius:3px;}
+
+#wp_celan_meau .detail_kf_ico_skype{width:21px;height:22px;background-image:url(../images/icon_view_skype.png); background-repeat:no-repeat; background-color:#d1d1cf; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}
+#wp_celan_meau .detail_kf li .skype:hover{ display:block; width:134px; height:30px; line-height:30px; color:#fff; text-decoration:none; text-indent:42px;  background-color:#17a8fb; border-radius:3px;}
+
+#wp_celan_meau .detail_kf_ico_ww{width:21px;height:22px;background-image:url(../images/icon_view_ww.png); background-repeat:no-repeat; background-color:#d1d1cf; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}
+#wp_celan_meau .detail_kf li .ww:hover{ display:block; width:134px; height:30px; line-height:30px; color:#fff; text-decoration:none; text-indent:42px;  background-color:#17a8fb; border-radius:3px;}
+
+/*#wp_celan_meau .detail_kf_ico_qq{width:21px;height:22px;background-image:url(../images/icon_view_qq.png); background-repeat:no-repeat; background-color:#d1d1cf; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}*/
+
+/**在线状态*/ 
+#wp_celan_meau .detail_kf_ico_qq_on{width:21px;height:22px;background-image:url(../images/icon_view_qq.png); background-repeat:no-repeat; background-color:#17a8fb; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}
+#wp_celan_meau .detail_kf_ico_ww_online{width:21px;height:22px;background-image:url(../images/icon_view_ww.png); background-repeat:no-repeat; background-color:#17a8fb; width:22px; height:21px; margin-left:10px; margin-top:5px; position:absolute;}
+/*#wp_celan_meau .detail_kf_ico_qq_on{ display:block; width:134px; height:30px; line-height:30px; color:#17a8fb; text-decoration:none; text-indent:42px; background-image:url(../images/icon_view_qq.png); background-repeat:no-repeat; background-position:10px 5px; border-radius:3px;}
+#wp_celan_meau .detail_kf_ico_qq_on:hover{ background-image:url(../images/icon_view_qq_h.png); background-repeat:no-repeat; background-position:10px 5px; color:#fff; background-color:#17a8fb; border-radius:3px;}*/
+/**在线状态*/
+/*#wp_celan_meau .detail_kf_ico_skype{ display:block; width:134px; height:30px; line-height:30px; color:#b5b5b5; text-decoration:none; text-indent:42px; background-image:url(../images/icon_view_skype.png); background-repeat:no-repeat; background-position:10px 5px;}
+#wp_celan_meau .detail_kf_ico_skype:hover{ background-image:url(../images/icon_view_skype_h.png); background-repeat:no-repeat; background-position:10px 5px; color:#fff; background-color:#17a8fb; border-radius:3px;}
+#wp_celan_meau .detail_kf_ico_ww{ display:block; width:134px; height:30px; line-height:30px; color:#b5b5b5; text-decoration:none; text-indent:42px; background-image:url(../images/icon_view_ww.png); background-repeat:no-repeat; background-position:10px 5px;}
+#wp_celan_meau .detail_kf_ico_ww:hover{ background-image:url(../images/icon_view_ww_h.png); background-repeat:no-repeat; background-position:10px 5px; color:#fff; background-color:#17a8fb; border-radius:3px;}*/
+#wp_celan_meau .noresult{ display:block; width:134px; height:30px; line-height:30px; color:#b5b5b5; text-decoration:none; text-align:center;}
+/*侧边栏展示-end*/

@@ -1,0 +1,103 @@
+@charset "gb2312";
+/* CSS Document */
+.m-btn{width:25px; height:100%; position:relative; display:none}
+.m-btn span{ height:3px; background:#333; display:block; position:absolute;width:100%; margin-bottom:5px; transition:.3s;-webkit-transition:.3s;-moz-transition:.3s}
+.m-btn span.line1{top:25px;}
+.m-btn span.line2{top:33px;}
+.m-btn span.line3{top:41px;}
+.open-menu span{background:#e02000;}
+.open-menu span.line1{ transform:rotateZ(45deg);-webkit-transform:rotateZ(45deg);-moz-transform:rotateZ(45deg);-ms-transform:rotateZ(45deg);-o-transform:rotateZ(45deg); transform-origin:left top}
+.open-menu span.line2{ opacity:0}
+.open-menu span.line3{ transform:rotateZ(-45deg);-webkit-transform:rotateZ(-45deg);-moz-transform:rotateZ(-45deg);-o-transform:rotateZ(-45deg); transform-origin:left bottom}
+.m-menu{ display:none;font-size:15px; width:100%; background:#fff;border-top:1px solid #e8e8e8; position:fixed;top:70px; left:0; z-index:10}
+.bdbg{ width:100%; height:100%; background:rgba(0,0,0,0.45); position:fixed;top:0;left:0; z-index:9; display:none}
+#header{ z-index:10}
+.mainlevel .yi{ line-height:45px; padding:0 5%; border-bottom:1px solid #e8e8e8;width:auto; display:block; position:relative}
+.mainlevel .yi i{ width:10px; height:10px; background:url(../images/nav-arrow.png) no-repeat; position:absolute; right:5%;top:16px}
+.sub_nav_01{ width:auto; background:#f2f2f2; padding:10px 5%; display:none}
+.sub_nav_01 a{ font-size:14px; line-height:30px; display:block}
+.hezuo-tit{ display:none}
+.mfoot{ background:#1f5299; color:#fff; font-size:12px; text-align:center; position:fixed; bottom:0;left:0; width:100%;height:45px;z-index: 99; display:none}
+.mfoot li{ float:left; width:50%;}
+.mfoot li a{ color:#fff; display:block}
+.mfoot li a.ftel{ background:url(../images/ftel1.png) no-repeat center 5px;padding-top: 25px;}
+.mfoot li a.ftel1{ background:url(../images/ftel.png) no-repeat center 5px;padding-top: 25px;background-size:17px 17px;}
+.mfoot li a.fmail{ background:url(../images/fmail.png) no-repeat center 5px;padding-top: 25px;background-size:auto 17px;}
+@media screen and (max-width:1200px){
+	.wrap{ width:90%}
+	#footer #inner #fleft{ width:75%}
+	#footer #inner #fright{ width:auto}
+	#main #nleft{ width:23%}
+	#nleft #guide #title{ background-size:cover}
+	#main #nright{ width:73%}
+	#neck02 #inner{ width:90%}
+	#guide #content p a{ padding-left:40px; background-position:20px center}
+	#nleft #guide #content p a:hover,#nleft #guide #content p .curent{ background-position:16px center}
+}
+@media screen and (max-width:1024px){
+	#header{ height:70px; position:fixed;top:0;left:0; width:100%; background:#fff; box-shadow:0 3px 5px rgba(0,0,0,0.15)}
+	#logo img{ width:auto; height:70px}
+	#header #use{ display:none}
+	#neck{ margin-top:70px;}
+	#nav{ display:none}
+	.m-btn{ display:block}
+	#neck02{ margin-top:70px; height:auto}
+	#hezuo #dabiaoti{ width:10%}
+	#main #hezuo #roll{ width:90%}
+	#business .pic{ padding:10px}
+	#main #center #about,#main #center #case{ padding-left:10px; padding-right:10px;}
+	#main #hezuo{ padding:15px 10px}
+	#demo span{ font-size:20px; margin-right:30px}
+	#main #nleft{ width:100%}
+	#main #nright{ width:100%}
+	#nright #ntitle #location{ display:none}
+	#dituContent{ width:100% !important; margin-bottom:10px}
+	#liuyan td{ box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
+	#liuyan textarea{ width:90%; height:200px}
+	#liuyan input[type="text"]{ width:60%}
+	#nbanner #demo,#banner #demo{ margin-right:0}
+	#nleft #guide #title{ background:none; border:none; border-bottom:1px solid #e8e8e8; margin-bottom:20px; text-align:left; line-height:35px; height:auto}
+	#guide #content{ border:none; margin-right:-2%}
+	#guide #content p{ float:left; width:31.33%; margin-right:2%; margin-bottom:2%; border:1px solid #ddd; border-top:none; box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;}
+	.min_height{ min-height:auto}
+}
+@media screen and (max-width:768px){
+	#business .pic{ width:49%}
+	#business .pic:nth-child(2n){ margin-right:0}
+	#business .pic img{ height:auto}
+	#main #center #about{width:100%;min-height:auto; margin-bottom:22px}
+	#main #center #case{ width:100%; min-height:auto}
+	#hezuo #dabiaoti{ display:none}
+	#main #hezuo #roll{ width:100%}
+	.hezuo-tit{ display:block; margin-top:10px}
+	#main #hezuo{ margin-top:0}
+	#nright #content1 #lianxi #lxkuai{ width:100%}
+	#demo{ height:20px}
+	#demo span{ font-size:18px}
+	
+}
+@media screen and (max-width:640px){
+	#footer #inner #fleft{ width:100%; float:none}
+	#footer #inner #fright{ float:none; text-align:left; margin-top:20px}
+	#liuyan textarea{ height:140px}
+	.hr td.td1{ width:18%; padding:5px !important;}
+	.hr td.td2{ width:30%}
+	.hr td.td3{ width:23%;padding:5px !important;}
+	#guide #content p{ width:48%}
+	.kuang li{ width:46%}
+	#businesslist #kuai #kwenzi p{ line-height:24px; color:#666}
+	#header{ height:60px;}
+	#logo img{ height:55px;padding-top:3px;}
+	.m-btn span.line1{ top:20px;}
+	.m-btn span.line2{ top:28px;}
+	.m-btn span.line3{ top:36px;}
+	.m-menu{ top:60px;}
+	#neck,#neck02{ margin-top:60px;}
+	#business .pic .intro{ height:90px; line-height:24px; color:#666}
+	#marquePicBox{ width:2000%}
+	#Indemo{ width:1000%}
+	#guide #content p a {padding-left: 30px;background-position: 11px center;}
+	#nleft #guide #content p a:hover,#nleft #guide #content p .curent{ background-position:8px center}
+	.mfoot{ display:block}
+	#footer{ margin-bottom:45px}
+}
